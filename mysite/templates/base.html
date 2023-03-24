@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}{% endblock  %}</title>
+	<style>
+	{% include 'css/autocomplete.css' %}
+	{% include 'css/base.css' %}
+	{% include 'css/changelists.css' %}
+	{% include 'css/dark_mode.css' %}
+	{% include 'css/dashboard.css' %}
+	</style>
+    
+    
+</head>
+
+<body style="text-align: center;">
+    {% if debug %}
+    <p>DEBUG: {{ debug }}</p>
+    {% endif %}
+    
+    {% include 'header.html' %}
+    <br><br>
+    <div>
+        {% block content %}{% endblock content %}
+    </div>
+    <br>
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+</body>
+
+</html>
